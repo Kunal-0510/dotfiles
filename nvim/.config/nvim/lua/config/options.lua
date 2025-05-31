@@ -8,3 +8,6 @@ vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while perfor
 vim.opt.expandtab = true -- Use spaces instead of tabs
 
 vim.opt.updatetime = 250 -- LSP hover timing
+vim.opt.wrap = true --enable wrap
+
+vim.g.root_spec = { "cwd" } -- open the current workind directory

@@ -178,7 +178,7 @@ return {
             noremap = true,
         },
         {
-            "<C-S-r>",
+            "<C-A-b>",
             "<cmd>CompetiTest run<cr>",
             desc = "Run testcases",
             silent = true,

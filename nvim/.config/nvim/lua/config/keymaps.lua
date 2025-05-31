@@ -43,12 +43,12 @@ vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", 
 vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
 
 -- Leader-based duplication (Space + d + direction)
-vim.keymap.set("n", "<leader>du", ":t .-1<CR>", { desc = "Duplicate line up", silent = true })
-vim.keymap.set("n", "<leader>dd", ":t .<CR>", { desc = "Duplicate line down", silent = true })
-vim.keymap.set("i", "<leader>du", "<Esc>:t .-1<CR>gi", { desc = "Duplicate line up", silent = true })
-vim.keymap.set("i", "<leader>dd", "<Esc>:t .<CR>gi", { desc = "Duplicate line down", silent = true })
-vim.keymap.set("v", "<leader>du", ":t '<-1<CR>gv", { desc = "Duplicate selection up", silent = true })
-vim.keymap.set("v", "<leader>dd", ":t '><CR>gv", { desc = "Duplicate selection down", silent = true })
+-- vim.keymap.set("n", "<leader>du", ":t .-1<CR>", { desc = "Duplicate line up", silent = true })
+-- vim.keymap.set("n", "<leader>dd", ":t .<CR>", { desc = "Duplicate line down", silent = true })
+-- vim.keymap.set("i", "<leader>du", "<Esc>:t .-1<CR>gi", { desc = "Duplicate line up", silent = true })
+-- vim.keymap.set("i", "<leader>dd", "<Esc>:t .<CR>gi", { desc = "Duplicate line down", silent = true })
+-- vim.keymap.set("v", "<leader>du", ":t '<-1<CR>gv", { desc = "Duplicate selection up", silent = true })
+-- vim.keymap.set("v", "<leader>dd", ":t '><CR>gv", { desc = "Duplicate selection down", silent = true })
 
 -- Remove the default terminal mapping for Ctrl+/
 vim.keymap.del("n", "<C-/>", { silent = true })
@@ -64,12 +64,12 @@ vim.keymap.set("n", "<C-/>", "gcc", { desc = "Toggle comment", remap = true })
 vim.keymap.set("i", "<C-/>", "<Esc>gcca", { desc = "Toggle comment", remap = true })
 vim.keymap.set("v", "<C-/>", "gc", { desc = "Toggle comment", remap = true })
 
--- Ctrl+Shift+/ for adding comment above
-vim.keymap.set("n", "<C-c-/>", "gcO", { desc = "Add comment above", remap = true })
-vim.keymap.set("i", "<C-c-/>", "<Esc>gcOa", { desc = "Add comment above", remap = true })
-
-vim.keymap.set("n", "<C-x-/>", "gco", { desc = "Add comment above", remap = true })
-vim.keymap.set("i", "<C-x-/>", "<Esc>gcoa", { desc = "Add comment above", remap = true })
+-- -- Ctrl+Shift+/ for adding comment above
+-- vim.keymap.set("n", "<C-c-/>", "gcO", { desc = "Add comment above", remap = true })
+-- vim.keymap.set("i", "<C-c-/>", "<Esc>gcOa", { desc = "Add comment above", remap = true })
+--
+-- vim.keymap.set("n", "<C-x-/>", "gco", { desc = "Add comment above", remap = true })
+-- vim.keymap.set("i", "<C-x-/>", "<Esc>gcoa", { desc = "Add comment above", remap = true })
 
 -- Tab for indenting in visual mode
 vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection", silent = true })
