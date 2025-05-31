@@ -11,3 +11,12 @@ vim.opt.updatetime = 250 -- LSP hover timing
 vim.opt.wrap = true --enable wrap
 
 vim.g.root_spec = { "cwd" } -- open the current workind directory
+
+if vim.g.neovide then
+    vim.g.neovide_opacity = 0.7
+    -- clear solid backgrounds so transparency shows through
+    vim.cmd([[
+        hi Normal guibg=NONE ctermbg=NONE
+        hi NonText guibg=NONE ctermbg=NONE
+        ]])
+end
