@@ -33,6 +33,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## 📦 Install Scripts
 
+- 🖥️ Neovide - GUI for Neovim
 - 🗂️ **Yazi** – Terminal file explorer
 - 🐳 **Docker** – Container management
 - ⚡ **Zoxide** – Fast directory jumping
