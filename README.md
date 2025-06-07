@@ -1,26 +1,65 @@
-**Dotfiles**
-- Code editor -> neovim
-- Shell -> zsh with ohmyposh
-- ohmyposh -> contains .json updated
-- grubConf -> Necessary changes to correctly load Nvidia drivers in the boot time
 
-**Libraries**
-- Yazi -> Terminal file explorer
-- Docker -> To maintain packages
+# 🖥️ My Dotfiles & Setup
 
-Hyprland -> ML4W
+A curated collection of configuration files and install scripts for my Arch Linux + Hyprland environment.
 
-== Error Fixes ==
+## ⚙️ Dotfiles
 
-**Kernel Panic**
-*Solution* -> add drivers to boot time. Use these command to see GPU and which drivers are in use. Adding them in Linux default works.
+### 1. Code Editor: Neovim 📝  
+Configuration folder:  
+
+
+### 2. Shell: Zsh + Oh My Posh 🌟  
+- Theme JSON at `~/.poshthemes/tokyonight_storm.omp.json`  
+- In your `~/.zshrc`, add:
+
+```bash
+source /usr/share/oh-my-posh/oh-my-posh.sh
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyonight_strom.omp.json)"
+```
+
+### 3. GRUB Configuration: grubConf 🔧  
+Add NVIDIA modules for early boot. Edit `/etc/default/grub`:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+Regenerate GRUB config:
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg 
+```
+
+## 📦 Install Scripts
+
+- 🗂️ **Yazi** – Terminal file explorer
+- 🐳 **Docker** – Container management
+- ⚡ **Zoxide** – Fast directory jumping
+
+
+## 🔧 Troubleshooting & Error Fixes
+
+### Kernel Panic on Boot 🧐
+
+**Symptom:** System panics at boot complaining about missing NVIDIA modules.  
+**Solution:**
+1. Verify GPU & drivers:
+2. Ensure GRUB loads them (see [GRUB Configuration](#3-grub-configuration-grubconf)).  
+3. Reboot and confirm.
 
 ```bash
 nvidia-smi
 lsmod | grep nvidia
+
 ```
 
-[Nvidia kernel setup in arch](https://github.com/korvahannu/arch-nvidia-drivers-installation-guide) -> Use this link for refernce.
+> **Tip:** For a step-by-step Arch + NVIDIA guide, see the link below.
 
+## 🔗 References
 
+- [NVIDIA on Arch guide](https://github.com/korvahannu/arch-nvidia-drivers-installation-guide)
+- [Oh My Posh docs](https://ohmyposh.dev/docs/)
+
+###### © xeroEngine
 
