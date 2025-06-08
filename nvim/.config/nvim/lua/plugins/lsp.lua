@@ -46,6 +46,24 @@ return {
                             },
                         },
                     },
+
+                    single_file_support = true,
+
+                    root_dir = function(fname)
+                        local util = require("lspconfig.util")
+
+                        local markers = {
+                            "pyproject.toml",
+                            "setup.py",
+                            "setup.cfg",
+                            "requirements.txt",
+                            "Pipefile",
+                            ".git",
+                        }
+
+                        local root = util.root_pattern(unpack(markers))(fname)
+                        return root or vim.fs.dirname(fname)
+                    end,
                 },
 
                 -- Ruff LSP for formatting and linting
