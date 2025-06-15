@@ -43,8 +43,7 @@
               "title": "TODO APP"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,8 +202,9 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "b21e28ff9d61c289",
+  "active": "d4f7b045fa61108e",
   "lastOpenFiles": [
+    "TODO APP.md",
     "Todo app plan.md",
     "Rust Syntax.md",
     "Excalidraw/Drawing 2025-06-15 13.08.10.excalidraw.md",
@@ -218,7 +218,6 @@
     "Deep Learning",
     "Intern Tasks.md",
     "Excalidraw/Drawing 2025-06-10 21.05.50.excalidraw.md",
-    "TODO APP.md",
     "PLANNER/Tasks.md",
     "PLANNER/Learning.md",
     ";adf;l.md",
