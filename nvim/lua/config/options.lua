@@ -12,6 +12,8 @@ vim.opt.wrap = true --enable wrap
 
 vim.g.root_spec = { "cwd" } -- open the current workind directory
 
+vim.g.autoformat = false -- Disable autoformat on saving
+
 if vim.g.neovide then
     vim.g.neovide_opacity = 0.7
     -- clear solid backgrounds so transparency shows through

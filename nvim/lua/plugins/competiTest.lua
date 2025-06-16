@@ -94,7 +94,13 @@ return {
         save_current_file = true,
         save_all_files = false,
         compile_directory = ".",
+        compile_command = {
+            cpp = { exec = "g++", args = { "-std=c++20", "-Wall", "-g", "-DDEBUG", "-I..", "$(FNAME)", "-o", "$(FNOEXT)"}}
+        },
         running_directory = ".",
+        run_command = {
+            cpp = { exec = "./$(FNOEXT)"}
+        },
 
         multiple_testing = -1,
         maximum_time = 5000,
@@ -127,39 +133,6 @@ return {
         open_received_contests = true,
         replace_received_testcases = false,
 
-        -- NEW filetype section: compile & run commands per ft
-        filetype = {
-            java = {
-                "cd $dir &&",
-                "javac $fileName &&",
-                "java $fileNameWithoutExt",
-            },
-            python = "python3 -u",
-            rust = {
-                "cd $dir &&",
-                "rustc $fileName &&",
-                "$dir/$fileNameWithoutExt",
-            },
-            cpp = {
-                "cd $dir &&",
-                "g++-13 -std=c++20 $fileName -o /tmp/$fileNameWithoutExt &&",
-                "/tmp/$fileNameWithoutExt",
-            },
-            c = function()
-                local base = {
-                    "cd $dir &&",
-                    "gcc $fileName -o /tmp/$fileNameWithoutExt",
-                }
-                local exec = {
-                    "&& /tmp/$fileNameWithoutExt",
-                    "&& rm /tmp/$fileNameWithoutExt",
-                }
-                for _, cmd in ipairs(exec) do
-                    table.insert(base, cmd)
-                end
-                return base
-            end,
-        },
     },
 
     keys = {
@@ -178,7 +151,7 @@ return {
             noremap = true,
         },
         {
-            "<C-A-b>",
+            "<C-A-n>",
             "<cmd>CompetiTest run<cr>",
             desc = "Run testcases",
             silent = true,
