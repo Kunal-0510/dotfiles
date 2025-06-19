@@ -6,6 +6,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
+        render_modes = {'n','c','t'},
         latex = {
             enabled = true,
             live_update = true,
