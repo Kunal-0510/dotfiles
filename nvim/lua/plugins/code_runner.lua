@@ -39,7 +39,7 @@ return {
             filetype = {
                 cpp = {
                     "cd $dir &&",
-                    "g++ -std=c++20 -O2 $fileName -o $fileNameWithoutExt &&",
+                    "g++ -std=c++20 -g -Og $fileName -o $fileNameWithoutExt &&",
                     "$dir/$fileNameWithoutExt",
                 },
                 python = resolve_python(),

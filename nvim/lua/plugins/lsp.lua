@@ -10,6 +10,7 @@ return {
                 -- C/C++
                 "clangd",
                 "clang-format",
+                "codelldb",
                 -- Rust
                 "rust-analyzer",
                 "rustfmt",
