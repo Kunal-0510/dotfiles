@@ -74,3 +74,11 @@ vim.keymap.set("v", "<C-/>", "gc", { desc = "Toggle comment", remap = true })
 -- Tab for indenting in visual mode
 vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection", silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "Unindent selection", silent = true })
+
+-- Compile file with debug flag 
+--  Ctrl-Alt-b  →  save + compile, show one notification
+vim.keymap.set("n", "<C-M-b>", function()
+  vim.notify("Compiling in debug mode")           -- ← message
+  vim.cmd("write")                                -- save buffer
+  vim.cmd("!g++ -std=c++20 -g -Og % -o debug")    -- run your command
+end, { noremap = true, silent = true })
