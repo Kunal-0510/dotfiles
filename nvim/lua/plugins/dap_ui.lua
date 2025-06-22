@@ -1,12 +1,20 @@
 return {
-  "rcarriga/nvim-dap-ui",
-  dependencies = { "mfussenegger/nvim-dap" },
-  event = "VeryLazy",
-  config = function()
-    local dap, dapui = require("dap"), require("dapui")
-    dapui.setup()
-    dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
-    dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
-    dap.listeners.before.event_exited["dapui_config"]     = function() dapui.close() end
-  end,
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-noetest/nvim-nio" },
+    event = "VeryLazy",
+    config = function()
+        local dap, dapui = require("dap"), require("dapui")
+        dapui.setup()
+        dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open()
+        end
+
+        -- Removed auto-close listeners
+        -- dap.listeners.before.event_terminated["dapui_config"] = function()
+        -- dapui.close()
+        -- end
+        -- dap.listeners.before.event_exited["dapui_config"] = function()
+        -- dapui.close()
+        -- end
+    end,
 }

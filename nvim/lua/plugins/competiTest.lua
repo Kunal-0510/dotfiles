@@ -1,4 +1,3 @@
--- ~/.config/nvim/lua/plugins/competitest.lua
 return {
     "xeluxee/competitest.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
@@ -95,7 +94,9 @@ return {
         save_all_files = false,
         compile_directory = ".",
         compile_command = {
-            cpp = { exec = "g++", args = { "-std=c++20", "-Wall", "-g", "-DDEBUG", "-I..", "$(FNAME)", "-o", "$(FNOEXT)"}}
+            -- cpp = { exec = "g++", args = { "-std=c++20", "-Wall", "-g", "-Og", "-DDEBUG", "-I..", "$(FNAME)", "-o", "$(FNOEXT)"}}  -> When using debug header
+            cpp = { exec = "g++", args = { "-std=c++20", "-Wall", "-g", "-Og", "$(FNAME)", "-o", "$(FNOEXT)"}}
+
         },
         running_directory = ".",
         run_command = {
