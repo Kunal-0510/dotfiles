@@ -22,3 +22,32 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
         })
     end,
 })
+
+-- Menu to smart seach in home directory
+local function quick_home_search()
+        vim.ui.select({
+                "Files", 
+            "Smart (Recent)", 
+            "Grep", 
+            "Directories"
+                }, {
+                    prompt = "Search in home directory:",
+        }, function(choice)
+            local home = vim.fn.expand("~")
+        if choice == "Files" then
+                    Snacks.picker.files({ cwd = home })
+            elseif choice == "Smart (Recent)" then
+                Snacks.picker.smart({ cwd = home })
+            elseif choice == "Grep" then
+                Snacks.picker.grep({ cwd = home })
+            elseif choice == "Directories" then
+                Snacks.picker.files({
+                    cwd = home,
+                    find_command = { "fd", "--type", "d" },
+                })
+            end
+    end)
+end
+
+-- Keymap for quick menu search
+vim.keymap.set('n', '<leader>fm', quick_home_search, { desc = "Quick Home Search Menu" })
